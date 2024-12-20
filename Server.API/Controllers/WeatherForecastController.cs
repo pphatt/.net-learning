@@ -15,10 +15,27 @@ public class WeatherForecastController : ControllerBase
         _weatherForecastService = weatherForecastService;
     }
 
-    [HttpGet]
-    [Route("test")]
-    public IEnumerable<WeatherForecast> Get()
+    [HttpGet("test")]
+    public IEnumerable<WeatherForecast> Get([FromQuery] int min, [FromQuery] int max, [FromQuery] int take, [FromBody] string name)
     {
         return _weatherForecastService.Get();
+    }
+
+    [HttpGet("data/{Slug}")]
+    public string Get([FromRoute] string Slug)
+    {
+        return Slug;
+    }
+
+    [HttpPost]
+    public string MockPost([FromBody] string name)
+    {
+        return name;
+    }
+
+    [HttpGet("currentDay")]
+    public WeatherForecast GetCurrentDate()
+    {
+        return _weatherForecastService.GetCurrentDay();
     }
 }

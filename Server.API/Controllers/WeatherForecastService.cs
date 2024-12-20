@@ -2,6 +2,7 @@
 {
     public interface IWeatherForecastService {
         IEnumerable<WeatherForecast> Get();
+        WeatherForecast GetCurrentDay();
     }
 
     public class WeatherForecastService : IWeatherForecastService
@@ -20,6 +21,10 @@
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        public WeatherForecast GetCurrentDay() {
+            return Get().First();
         }
     }
 }
