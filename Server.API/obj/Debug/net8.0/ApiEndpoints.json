@@ -73,6 +73,53 @@
   },
   {
     "ContainingType": "Server.API.Controllers.WeatherForecastController",
+    "Method": "PostGenerate",
+    "RelativePath": "api/generate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Server.API.Controllers.PostRequestDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "count",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.API.Controllers.WeatherForecastController",
+    "Method": "GetGenerate",
+    "RelativePath": "api/generate",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "count",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "minTemperature",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "maxTemperature",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.API.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "api/test",
     "HttpMethod": "GET",

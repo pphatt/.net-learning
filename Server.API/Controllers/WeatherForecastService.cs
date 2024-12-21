@@ -3,6 +3,7 @@
     public interface IWeatherForecastService {
         IEnumerable<WeatherForecast> Get();
         WeatherForecast GetCurrentDay();
+        IEnumerable<WeatherForecast> Generate(int minTemperature, int maxTemperature, int count);
     }
 
     public class WeatherForecastService : IWeatherForecastService
@@ -25,6 +26,16 @@
 
         public WeatherForecast GetCurrentDay() {
             return Get().First();
+        }
+
+        public IEnumerable<WeatherForecast> Generate(int minTemperature, int maxTemperature, int count) {
+            return Enumerable.Range(1, count).Select(index => new WeatherForecast
+            {
+                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+                TemperatureC = Random.Shared.Next(minTemperature, maxTemperature),
+                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+            })
+            .ToArray();
         }
     }
 }
