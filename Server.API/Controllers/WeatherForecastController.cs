@@ -1,22 +1,35 @@
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
+using System.ComponentModel;
 
 namespace Server.API.Controllers;
 
 public class PostRequestDto
 {
+    [DefaultValue(10)]
+    [SwaggerParameter(Description = "Minimum temperature", Required = true)]
     public int minTemperature { get; set; }
+
+    [DefaultValue(20)]
+    [SwaggerParameter(Description = "Maximum temperature", Required = true)]
     public int maxTemperature { get; set; }
 }
 
 public class GetRequestDto
 {
     [FromQuery]
+    [DefaultValue(5)]
+    [SwaggerParameter(Description = "Length of the return value", Required = true)]
     public int count { get; set; }
 
     [FromQuery]
+    [DefaultValue(10)]
+    [SwaggerParameter(Description = "Minimum temperature", Required = true)]
     public int minTemperature { get; set; }
 
     [FromQuery]
+    [DefaultValue(20)]
+    [SwaggerParameter(Description = "Maximum temperature", Required = true)]
     public int maxTemperature { get; set; }
 }
 
@@ -32,8 +45,6 @@ public class WeatherForecastController : ControllerBase
         _logger = logger;
         _weatherForecastService = weatherForecastService;
     }
-
-
 
     [HttpGet("test")]
     public IEnumerable<WeatherForecast> Get([FromQuery] int min, [FromQuery] int max, [FromQuery] int take, [FromBody] string name)
@@ -60,7 +71,8 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpPost("generate")]
-    public IActionResult PostGenerate([FromBody] PostRequestDto request, [FromQuery] int count)
+    [SwaggerOperation(Summary = "Generate weather data", Description = "Generate a list of weather forecasts based on input parameters.")]
+    public IActionResult PostGenerate([FromBody] PostRequestDto request, [FromQuery, SwaggerParameter(Description = "Length of the return value", Required = true), DefaultValue(5)] int count)
     {
         if (count < 0 || request.minTemperature > request.maxTemperature)
         {
@@ -71,6 +83,7 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpGet("generate")]
+    [SwaggerOperation(Summary = "Generate weather data", Description = "Generate a list of weather forecasts based on input parameters.")]
     public IActionResult GetGenerate([FromQuery] GetRequestDto requestDto)
     {
         if (requestDto.count < 0 || requestDto.minTemperature > requestDto.maxTemperature)

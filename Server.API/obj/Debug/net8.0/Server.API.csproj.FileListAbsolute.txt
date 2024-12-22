@@ -31,3 +31,4 @@ C:\Dev\C#\ContentManagement\Server.API\obj\Debug\net8.0\Server.API.pdb
 C:\Dev\C#\ContentManagement\Server.API\obj\Debug\net8.0\Server.API.genruntimeconfig.cache
 C:\Dev\C#\ContentManagement\Server.API\obj\Debug\net8.0\ref\Server.API.dll
 C:\Dev\C#\ContentManagement\Server.API\obj\Debug\net8.0\Server.API.sourcelink.json
+C:\Dev\C#\ContentManagement\Server.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Annotations.dll
