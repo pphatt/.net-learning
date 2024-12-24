@@ -1,0 +1,16 @@
+C:\Dev\C#\ContentManagement\Server.Application\bin\Debug\net8.0\Server.Application.deps.json
+C:\Dev\C#\ContentManagement\Server.Application\bin\Debug\net8.0\Server.Application.dll
+C:\Dev\C#\ContentManagement\Server.Application\bin\Debug\net8.0\Server.Application.pdb
+C:\Dev\C#\ContentManagement\Server.Application\bin\Debug\net8.0\Server.Domain.dll
+C:\Dev\C#\ContentManagement\Server.Application\bin\Debug\net8.0\Server.Domain.pdb
+C:\Dev\C#\ContentManagement\Server.Application\obj\Debug\net8.0\Server.Application.csproj.AssemblyReference.cache
+C:\Dev\C#\ContentManagement\Server.Application\obj\Debug\net8.0\Server.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dev\C#\ContentManagement\Server.Application\obj\Debug\net8.0\Server.Application.AssemblyInfoInputs.cache
+C:\Dev\C#\ContentManagement\Server.Application\obj\Debug\net8.0\Server.Application.AssemblyInfo.cs
+C:\Dev\C#\ContentManagement\Server.Application\obj\Debug\net8.0\Server.Application.csproj.CoreCompileInputs.cache
+C:\Dev\C#\ContentManagement\Server.Application\obj\Debug\net8.0\Server.Application.sourcelink.json
+C:\Dev\C#\ContentManagement\Server.Application\obj\Debug\net8.0\Server.Application.csproj.CopyComplete
+C:\Dev\C#\ContentManagement\Server.Application\obj\Debug\net8.0\Server.Application.dll
+C:\Dev\C#\ContentManagement\Server.Application\obj\Debug\net8.0\refint\Server.Application.dll
+C:\Dev\C#\ContentManagement\Server.Application\obj\Debug\net8.0\Server.Application.pdb
+C:\Dev\C#\ContentManagement\Server.Application\obj\Debug\net8.0\ref\Server.Application.dll

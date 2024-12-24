@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "Server.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Server.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Server.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Server.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Server.Domain/Server.Domain.csproj",
+      "msbuildProject": "../Server.Domain/Server.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "Server.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\vutie\\.nuget\\packages\\": {},
@@ -39,7 +58,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Dev\\C#\\ContentManagement\\Server.Domain\\Server.Domain.csproj": {
+              "projectPath": "C:\\Dev\\C#\\ContentManagement\\Server.Domain\\Server.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

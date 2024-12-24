@@ -1,0 +1,12 @@
+C:\Dev\C#\ContentManagement\Server.Domain\bin\Debug\net8.0\Server.Domain.deps.json
+C:\Dev\C#\ContentManagement\Server.Domain\bin\Debug\net8.0\Server.Domain.dll
+C:\Dev\C#\ContentManagement\Server.Domain\bin\Debug\net8.0\Server.Domain.pdb
+C:\Dev\C#\ContentManagement\Server.Domain\obj\Debug\net8.0\Server.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dev\C#\ContentManagement\Server.Domain\obj\Debug\net8.0\Server.Domain.AssemblyInfoInputs.cache
+C:\Dev\C#\ContentManagement\Server.Domain\obj\Debug\net8.0\Server.Domain.AssemblyInfo.cs
+C:\Dev\C#\ContentManagement\Server.Domain\obj\Debug\net8.0\Server.Domain.csproj.CoreCompileInputs.cache
+C:\Dev\C#\ContentManagement\Server.Domain\obj\Debug\net8.0\Server.Domain.sourcelink.json
+C:\Dev\C#\ContentManagement\Server.Domain\obj\Debug\net8.0\Server.Domain.dll
+C:\Dev\C#\ContentManagement\Server.Domain\obj\Debug\net8.0\refint\Server.Domain.dll
+C:\Dev\C#\ContentManagement\Server.Domain\obj\Debug\net8.0\Server.Domain.pdb
+C:\Dev\C#\ContentManagement\Server.Domain\obj\Debug\net8.0\ref\Server.Domain.dll
