@@ -14,6 +14,8 @@ public class AppDbContext : DbContext
 
     internal DbSet<PostComments> PostComments { get; set; }
 
+    internal DbSet<PostLikes> PostLikes { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
