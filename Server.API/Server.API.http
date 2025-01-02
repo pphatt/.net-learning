@@ -1,31 +1,6 @@
 @port = 5089
 @Server.API_HostAddress = https://localhost:7008
 
-GET {{Server.API_HostAddress}}/api/test
-Accept: application/json
+GET {{Server.API_HostAddress}}/posts
 
 ###
-
-GET {{Server.API_HostAddress}}/api/data/test
-
-###
-
-GET {{Server.API_HostAddress}}/api/whoami
-Accept: application/json
-
-###
-
-POST {{Server.API_HostAddress}}/api/login
-Content-Type: application/json
-
-{
-  "email": "phatvu080903@gmail.com",
-  "password": "longPassword@123"
-}
-
-###
-
-POST {{Server.API_HostAddress}}/api
-Content-Type: application/json
-
-"tienphat"

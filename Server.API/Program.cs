@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
 using Server.API;
-using Server.API.Controllers;
+using Server.Application;
 using Server.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,14 +12,14 @@ var builder = WebApplication.CreateBuilder(args);
 {
     builder.Services.AddControllers();
 
-    builder.Services.AddInfrastructure(builder.Configuration);
+    builder.Services
+        .AddApplication()
+        .AddInfrastructure(builder.Configuration);
 }
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
 
 builder.Services.AddSwaggerGen(c =>
 {
