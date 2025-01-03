@@ -4,3 +4,7 @@
 GET {{Server.API_HostAddress}}/posts
 
 ###
+
+GET {{Server.API_HostAddress}}/post/D7004D08-2DAB-487B-5DED-08DD2A71BF93
+
+###

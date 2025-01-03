@@ -13,9 +13,16 @@ public class PostRepository : IPostRepository
         _dbContext = dbContext;
     }
 
-    public async Task<List<Post>> GetAllPosts()
+    public async Task<List<Post>> GetAllAsync()
     {
         var posts = await _dbContext.Post.ToListAsync();
         return posts;
+    }
+
+    public async Task<Post?> GetByIdAsync(Guid slug)
+    {
+        var post = await _dbContext.Post.FirstOrDefaultAsync(x => x.Id == slug);
+
+        return post;
     }
 }

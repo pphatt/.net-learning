@@ -19,7 +19,15 @@ public class PostService : IPostService
     public async Task<List<Post>> GetAllPostsAsync()
     {
         _logger.LogInformation("Get All Post Here");
-        var post = await _postRepository.GetAllPosts();
+        var posts = await _postRepository.GetAllAsync();
+        return posts;
+    }
+
+    public async Task<Post> GetById(Guid slug)
+    {
+        _logger.LogInformation("Get post here");
+        var post = await _postRepository.GetByIdAsync(slug);
+
         return post;
     }
 }

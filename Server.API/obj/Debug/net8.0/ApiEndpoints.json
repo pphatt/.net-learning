@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "Server.API.Controllers.PostController",
+    "Method": "GetPost",
+    "RelativePath": "post/{Slug}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Slug",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.API.Controllers.PostController",
     "Method": "GetAll",
     "RelativePath": "posts",
     "HttpMethod": "GET",

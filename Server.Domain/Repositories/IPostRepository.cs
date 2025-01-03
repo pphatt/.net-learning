@@ -4,5 +4,6 @@ namespace Server.Domain.Repositories;
 
 public interface IPostRepository
 {
-    Task<List<Post>> GetAllPosts();
+    Task<List<Post>> GetAllAsync();
+    Task<Post?> GetByIdAsync(Guid slug);
 }
