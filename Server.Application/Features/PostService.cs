@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
+using Server.Application.Common.Interfaces.Persistence;
+using Server.Application.Common.Interfaces.Services;
 using Server.Domain.Entity.Content;
-using Server.Domain.Features;
-using Server.Domain.Repositories;
 
 namespace Server.Application.Features;
 

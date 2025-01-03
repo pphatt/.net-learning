@@ -1,6 +1,6 @@
 ﻿using Server.Domain.Entity.Content;
 
-namespace Server.Domain.Repositories;
+namespace Server.Application.Common.Interfaces.Persistence;
 
 public interface IPostRepository
 {

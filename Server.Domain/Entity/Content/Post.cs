@@ -12,4 +12,10 @@ public class Post : BaseEntity
 
     [Required]
     public string Slug { get; set; }
+
+    [Required]
+    public List<PostComments> PostComments { get; set; }
+
+    [Required]
+    public List<PostLikes> PostLikes { get; set; }
 }

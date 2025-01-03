@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Server.Application.Common.Interfaces.Services;
 using Server.Application.Features;
-using Server.Domain.Features;
 
 namespace Server.Application;
 

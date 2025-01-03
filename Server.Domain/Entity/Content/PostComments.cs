@@ -5,7 +5,10 @@ namespace Server.Domain.Entity.Content;
 public class PostComments : BaseEntity
 {
     [Required]
-    public string PostId {  get; set; }
+    public Guid PostId {  get; set; }
+
+    [Required]
+    public string UserId { set; get; }
 
     [Required]
     public string Content { get; set; }

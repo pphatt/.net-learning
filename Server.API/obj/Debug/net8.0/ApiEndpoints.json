@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Server.API.Controllers.PostController",
-    "Method": "GetPost",
+    "Method": "GetPostById",
     "RelativePath": "post/{Slug}",
     "HttpMethod": "GET",
     "IsController": true,

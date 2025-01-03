@@ -1,6 +1,6 @@
 ﻿using Server.Domain.Entity.Content;
 
-namespace Server.Domain.Features;
+namespace Server.Application.Common.Interfaces.Services;
 
 public interface IPostService
 {

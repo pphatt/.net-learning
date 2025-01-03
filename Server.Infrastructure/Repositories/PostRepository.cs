@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Server.Application.Common.Interfaces.Persistence;
 using Server.Domain.Entity.Content;
-using Server.Domain.Repositories;
 
 namespace Server.Infrastructure.Repositories;
 
@@ -15,7 +15,11 @@ public class PostRepository : IPostRepository
 
     public async Task<List<Post>> GetAllAsync()
     {
-        var posts = await _dbContext.Post.ToListAsync();
+        var posts = await _dbContext.Post
+            .Include(p => p.PostComments)
+            .Include(p => p.PostLikes)
+            .ToListAsync();
+
         return posts;
     }
 

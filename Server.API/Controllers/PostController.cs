@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Server.Domain.Features;
+using Server.Application.Common.Interfaces.Services;
 using Swashbuckle.AspNetCore.Annotations;
 using System.ComponentModel;
 

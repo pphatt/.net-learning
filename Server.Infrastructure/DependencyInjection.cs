@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Server.Domain.Repositories;
+using Server.Application.Common.Interfaces.Persistence;
 using Server.Infrastructure.Repositories;
 
 namespace Server.Infrastructure;
