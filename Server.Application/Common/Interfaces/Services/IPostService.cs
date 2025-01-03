@@ -1,9 +1,10 @@
-﻿using Server.Domain.Entity.Content;
+﻿using Server.Application.Common.Dtos.Posts;
+using Server.Domain.Entity.Content;
 
 namespace Server.Application.Common.Interfaces.Services;
 
 public interface IPostService
 {
-    Task<List<Post>> GetAllPostsAsync();
-    Task<Post> GetById(Guid slug);
+    Task<List<PostDto>> GetAllPostsAsync();
+    Task<PostDto> GetById(Guid slug);
 }

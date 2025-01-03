@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Server.Application.Common.Dtos.Posts;
 using Server.Application.Common.Interfaces.Persistence;
 using Server.Application.Common.Interfaces.Services;
 using Server.Domain.Entity.Content;
@@ -16,18 +17,23 @@ public class PostService : IPostService
         _postRepository = postRepository;
     }
 
-    public async Task<List<Post>> GetAllPostsAsync()
+    public async Task<List<PostDto>> GetAllPostsAsync()
     {
         _logger.LogInformation("Get All Post Here");
         var posts = await _postRepository.GetAllAsync();
-        return posts;
+
+        var postsDto = posts.Select(PostDto.FromEntity).ToList();
+
+        return postsDto!;
     }
 
-    public async Task<Post> GetById(Guid slug)
+    public async Task<PostDto> GetById(Guid slug)
     {
         _logger.LogInformation("Get post here");
         var post = await _postRepository.GetByIdAsync(slug);
 
-        return post;
+        var postsDto = PostDto.FromEntity(post);
+
+        return postsDto!;
     }
 }

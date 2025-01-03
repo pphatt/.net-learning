@@ -5,17 +5,17 @@ namespace Server.Domain.Entity.Content;
 public class Post : BaseEntity
 {
     [Required]
-    public string Title {  get; set; }
+    public string Title { get; set; } = default!;
 
     [Required]
     public string Content { get; set; } = default!;
 
     [Required]
-    public string Slug { get; set; }
+    public string Slug { get; set; } = default!;
 
     [Required]
-    public List<PostComments> PostComments { get; set; }
+    public List<PostComments> PostComments { get; set; } = new List<PostComments>();
 
     [Required]
-    public List<PostLikes> PostLikes { get; set; }
+    public List<PostLikes> PostLikes { get; set; } = new List<PostLikes>();
 }

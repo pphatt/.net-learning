@@ -14,10 +14,4 @@
     <ProjectReference Include="..\Server.Domain\Server.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Common\Dtos\Comments\" />
-    <Folder Include="Common\Dtos\Reactions\" />
-    <Folder Include="Common\Dtos\Posts\" />
-  </ItemGroup>
-
 </Project>

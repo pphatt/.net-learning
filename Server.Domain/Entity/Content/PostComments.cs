@@ -8,8 +8,8 @@ public class PostComments : BaseEntity
     public Guid PostId {  get; set; }
 
     [Required]
-    public string UserId { set; get; }
+    public string UserId { set; get; } = default!;
 
     [Required]
-    public string Content { get; set; }
+    public string Content { get; set; } = default!;
 }
