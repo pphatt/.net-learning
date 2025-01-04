@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "+DHvQqRYPLOJ0fJkoom7obx1VzOa+TkfPO450Li21yaiRBPi7077aR9R3ghMjfYWvVfB99TRpuf+DSzwHmY+NA==",
+  "dgSpecHash": "N8H6xL9/J3xPQhCJOGd8HYpYsd7lTm2UU3xI2D4/uKThuGRfj15ba+qhX8iGVuG8vD36iyiRHKOBSnxngbCG1g==",
   "success": true,
   "projectFilePath": "C:\\Dev\\C#\\ContentManagement\\Server.API\\Server.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vutie\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\vutie\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
+    "C:\\Users\\vutie\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\vutie\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.6\\microsoft.data.sqlclient.5.1.6.nupkg.sha512",

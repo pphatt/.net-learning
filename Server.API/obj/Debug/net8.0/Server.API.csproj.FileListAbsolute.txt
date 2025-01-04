@@ -87,3 +87,6 @@ C:\Dev\C#\ContentManagement\Server.API\bin\Debug\net8.0\Server.Infrastructure.pd
 C:\Dev\C#\ContentManagement\Server.API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
 C:\Dev\C#\ContentManagement\Server.API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
 C:\Dev\C#\ContentManagement\Server.API\bin\Debug\net8.0\AutoMapper.dll
+C:\Dev\C#\ContentManagement\Server.API\bin\Debug\net8.0\FluentValidation.dll
+C:\Dev\C#\ContentManagement\Server.API\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Dev\C#\ContentManagement\Server.API\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
