@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cC1iIBd6rg9nVn3+TvLbzes+MrLC8dWHRxWU421KJbL98a0q/i9jYB10Dm6Hf1uY0++eZP83ZupQnvC7eVJY1w==",
+  "dgSpecHash": "92poNl7r7njUiwz82Pcgque2UYhOeobHP85KCvERYHBXh6VIcNcrfL1PNxWb53S3o3Dwn9mJdyG/VbIjPoVydw==",
   "success": true,
   "projectFilePath": "C:\\Dev\\C#\\ContentManagement\\Server.Application\\Server.Application.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "C:\\Users\\vutie\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
+    "C:\\Users\\vutie\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
+    "C:\\Users\\vutie\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",

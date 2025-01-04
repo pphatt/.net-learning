@@ -1,11 +1,10 @@
 ﻿using FluentValidation;
-using Server.Application.Common.Dtos.Posts;
 
-namespace Server.Application.Common.Validators.Post;
+namespace Server.Application.Features.PostApp.Commands.CreatePost;
 
-public class CreatePostValidator : AbstractValidator<CreatePostDto>
+public class CreatePostCommandValidator : AbstractValidator<CreatePostCommand>
 {
-    public CreatePostValidator()
+    public CreatePostCommandValidator()
     {
         RuleFor(dto => dto.Title)
             .NotNull()

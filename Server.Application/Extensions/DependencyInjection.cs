@@ -1,8 +1,6 @@
 ﻿using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
-using Server.Application.Common.Interfaces.Services;
-using Server.Application.Features;
 using System.Reflection;
 
 namespace Server.Application.Extensions;
@@ -13,7 +11,7 @@ public static class DependencyInjection
     {
         var applicationAssembly = Assembly.GetExecutingAssembly();
 
-        services.AddScoped<IPostService, PostService>();
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(applicationAssembly));
 
         services.AddValidatorsFromAssembly(applicationAssembly)
             .AddFluentValidationAutoValidation();

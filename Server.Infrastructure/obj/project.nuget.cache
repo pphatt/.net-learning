@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QU1D6Iiq84jb7W3MIZp7EIAR/6YNdpLvP5fOvsagfKTakg3fUAwXGFBl760R5cO5pNArESrbtmECQ6YEJv6QBA==",
+  "dgSpecHash": "eN74e1DC4b8Mfoeupn/eWK4cHOhviAR/7oWw1hE5S313zP3dNYhLxy0veuMs5iOCLtZfnmWN5AteIyvS4RjDLQ==",
   "success": true,
   "projectFilePath": "C:\\Dev\\C#\\ContentManagement\\Server.Infrastructure\\Server.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,8 @@
     "C:\\Users\\vutie\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\vutie\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
+    "C:\\Users\\vutie\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\microsoft.codeanalysis.common\\4.5.0\\microsoft.codeanalysis.common.4.5.0.nupkg.sha512",

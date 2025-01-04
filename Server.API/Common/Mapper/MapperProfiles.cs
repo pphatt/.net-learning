@@ -2,6 +2,7 @@
 using Server.Application.Common.Dtos.Comments;
 using Server.Application.Common.Dtos.Posts;
 using Server.Application.Common.Dtos.Reactions;
+using Server.Application.Features.PostApp.Commands.CreatePost;
 using Server.Domain.Entity.Content;
 
 namespace Server.API.Common.Mapper;
@@ -15,7 +16,7 @@ public class MapperProfiles : Profile
         CreateMap<PostComments, PostCommentsDto>();
         CreateMap<PostLikes, PostLikesDto>();
 
-        CreateMap<CreatePostDto, Post>()
+        CreateMap<CreatePostCommand, Post>()
             .ForMember(p => p.Id, opt => opt.Ignore())
             .ForMember(p => p.Slug, opt => opt.MapFrom(src => ""))
             .ForMember(p => p.PostComments, opt => opt.Ignore())
