@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Server.Infrastructure;
 
-namespace Server.API;
+namespace Server.API.Extensions;
 
 public static class MigrationManager
 {
@@ -9,7 +9,7 @@ public static class MigrationManager
     {
         var scope = app.Services.CreateScope();
         var appDbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-        
+
         // apply update-database command here.
         appDbContext.Database.Migrate();
         DataSeeder.SeedData(appDbContext).GetAwaiter().GetResult();

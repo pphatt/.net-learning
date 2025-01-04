@@ -86,3 +86,4 @@ C:\Dev\C#\ContentManagement\Server.API\bin\Debug\net8.0\Server.Infrastructure.dl
 C:\Dev\C#\ContentManagement\Server.API\bin\Debug\net8.0\Server.Infrastructure.pdb
 C:\Dev\C#\ContentManagement\Server.API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
 C:\Dev\C#\ContentManagement\Server.API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Dev\C#\ContentManagement\Server.API\bin\Debug\net8.0\AutoMapper.dll

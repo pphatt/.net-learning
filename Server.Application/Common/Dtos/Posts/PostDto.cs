@@ -14,21 +14,4 @@ public class PostDto
     public List<PostLikesDto> PostLikes { get; set; } = new List<PostLikesDto>();
     public DateTime DateCreated { get; set; }
     public DateTime DateUpdated { get; set; }
-
-    public static PostDto? FromEntity(Post? post)
-    {
-        if (post is null) return null;
-
-        return new PostDto()
-        {
-            Id = post.Id,
-            Title = post.Title,
-            Content = post.Content,
-            Slug = post.Slug,
-            PostComments = post.PostComments.Select(PostCommentsDto.FromEntity).ToList()!,
-            PostLikes = post.PostLikes.Select(PostLikesDto.FromEntity).ToList()!,
-            DateCreated = post.DateCreated,
-            DateUpdated = post.DateUpdated,
-        };
-    }
 }

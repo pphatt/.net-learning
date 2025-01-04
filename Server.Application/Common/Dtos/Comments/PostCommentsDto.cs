@@ -11,19 +11,4 @@ public class PostCommentsDto
     public string Content { get; set; } = default!;
     public DateTime DateCreated { get; set; }
     public DateTime DateUpdated { get; set; }
-
-    public static PostCommentsDto? FromEntity(PostComments? postComments)
-    {
-        if (postComments is null) return null;
-
-        return new PostCommentsDto()
-        {
-            Id = postComments.Id,
-            PostId = postComments.PostId,
-            UserId = postComments.UserId,
-            Content = postComments.Content,
-            DateCreated = postComments.DateCreated,
-            DateUpdated = postComments.DateUpdated,
-        };
-    }
 }

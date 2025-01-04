@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Fb26CLo17oAX4ren0JSNJho4rOdfZdSekkQA0RCxa5HoQPerVEc07g/Y01gnptR1Pieie4s6qmDWjmA2Y5ipwQ==",
+  "dgSpecHash": "+DHvQqRYPLOJ0fJkoom7obx1VzOa+TkfPO450Li21yaiRBPi7077aR9R3ghMjfYWvVfB99TRpuf+DSzwHmY+NA==",
   "success": true,
   "projectFilePath": "C:\\Dev\\C#\\ContentManagement\\Server.API\\Server.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\vutie\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

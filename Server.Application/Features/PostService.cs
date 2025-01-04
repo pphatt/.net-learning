@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using AutoMapper;
+using Microsoft.Extensions.Logging;
 using Server.Application.Common.Dtos.Posts;
 using Server.Application.Common.Interfaces.Persistence;
 using Server.Application.Common.Interfaces.Services;
@@ -10,11 +11,13 @@ public class PostService : IPostService
 {
     ILogger<PostService> _logger;
     IPostRepository _postRepository;
+    IMapper _mapper;
 
-    public PostService(ILogger<PostService> logger, IPostRepository postRepository)
+    public PostService(ILogger<PostService> logger, IPostRepository postRepository, IMapper mapper)
     {
         _logger = logger;
         _postRepository = postRepository;
+        _mapper = mapper;
     }
 
     public async Task<List<PostDto>> GetAllPostsAsync()
@@ -22,7 +25,7 @@ public class PostService : IPostService
         _logger.LogInformation("Get All Post Here");
         var posts = await _postRepository.GetAllAsync();
 
-        var postsDto = posts.Select(PostDto.FromEntity).ToList();
+        var postsDto = _mapper.Map<List<PostDto>>(posts);
 
         return postsDto!;
     }
@@ -32,7 +35,7 @@ public class PostService : IPostService
         _logger.LogInformation("Get post here");
         var post = await _postRepository.GetByIdAsync(slug);
 
-        var postsDto = PostDto.FromEntity(post);
+        var postsDto = _mapper.Map<PostDto>(post);
 
         return postsDto!;
     }

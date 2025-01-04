@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
-using Server.API;
+using Server.API.Extensions;
 using Server.Application;
 using Server.Infrastructure;
 
@@ -10,9 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 {
-    builder.Services.AddControllers();
-
     builder.Services
+        .AddPresentation()
         .AddApplication()
         .AddInfrastructure(builder.Configuration);
 }
