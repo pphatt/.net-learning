@@ -2,8 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
 using Server.API.Extensions;
-using Server.Application;
-using Server.Infrastructure;
+using Server.Application.Extensions;
+using Server.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -2,7 +2,7 @@
 using Server.Application.Common.Interfaces.Services;
 using Server.Application.Features;
 
-namespace Server.Application;
+namespace Server.Application.Extensions;
 
 public static class DependencyInjection
 {

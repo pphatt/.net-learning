@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Server.Application.Common.Interfaces.Persistence;
 using Server.Infrastructure.Repositories;
 
-namespace Server.Infrastructure;
+namespace Server.Infrastructure.Extensions;
 
 public static class DependencyInjection
 {
@@ -20,7 +20,7 @@ public static class DependencyInjection
 
     internal static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContext<AppDbContext>(options => 
+        services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
         return services;

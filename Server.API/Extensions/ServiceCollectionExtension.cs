@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace Server.API.Extensions;
 
-public static class ServiceCollectionExtensions
+public static class ServiceCollectionExtension
 {
     public static IServiceCollection AddPresentation(this IServiceCollection services)
     {
