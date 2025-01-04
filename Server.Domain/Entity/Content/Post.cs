@@ -4,10 +4,12 @@ namespace Server.Domain.Entity.Content;
 
 public class Post : BaseEntity
 {
-    [Required]
+    [Required(ErrorMessage = "Post title is required")]
+    [StringLength(100, MinimumLength = 5)]
     public string Title { get; set; } = default!;
 
-    [Required]
+    [Required(ErrorMessage = "Post content is required")]
+    [StringLength(256, MinimumLength = 5)]
     public string Content { get; set; } = default!;
 
     [Required]
