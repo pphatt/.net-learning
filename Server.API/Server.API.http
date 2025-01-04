@@ -8,3 +8,13 @@ GET {{Server.API_HostAddress}}/posts
 GET {{Server.API_HostAddress}}/post/D7004D08-2DAB-487B-5DED-08DD2A71BF93
 
 ###
+
+POST {{Server.API_HostAddress}}/posts
+Content-Type: application/json
+
+{
+  "title": "This is a beautiful world",
+  "content": "This is a great day"
+}
+
+###

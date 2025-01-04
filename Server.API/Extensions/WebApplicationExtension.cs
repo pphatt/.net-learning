@@ -8,6 +8,7 @@ public static class WebApplicationExtension
 {
     public static WebApplication AddAutoMapperValidation(this WebApplication app)
     {
+        // add auto mapper validation.
         var scope = app.Services.CreateScope();
         var mapper = scope.ServiceProvider.GetRequiredService<IMapper>();
         mapper.ConfigurationProvider.AssertConfigurationIsValid();

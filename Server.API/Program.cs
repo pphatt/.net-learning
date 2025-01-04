@@ -35,6 +35,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// add auto mapper validation.
 app.AddAutoMapperValidation();
 
 app.MigrateDatabase();
