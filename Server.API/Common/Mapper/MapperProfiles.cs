@@ -14,5 +14,14 @@ public class MapperProfiles : Profile
         CreateMap<Post, PostDto>();
         CreateMap<PostComments, PostCommentsDto>();
         CreateMap<PostLikes, PostLikesDto>();
+
+        CreateMap<CreatePostDto, Post>()
+            .ForMember(p => p.Id, opt => opt.Ignore())
+            .ForMember(p => p.Slug, opt => opt.MapFrom(src => ""))
+            .ForMember(p => p.PostComments, opt => opt.Ignore())
+            .ForMember(p => p.PostLikes, opt => opt.Ignore())
+            .ForMember(p => p.DateCreated, opt => opt.MapFrom(_ => DateTime.UtcNow))
+            .ForMember(p => p.DateUpdated, opt => opt.MapFrom(_ => DateTime.UtcNow))
+            .ForMember(p => p.DateDeleted, opt => opt.Ignore());
     }
 }

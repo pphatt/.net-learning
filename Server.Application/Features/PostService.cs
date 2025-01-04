@@ -39,4 +39,11 @@ public class PostService : IPostService
 
         return postsDto!;
     }
+
+    public async Task CreatePost(CreatePostDto dto)
+    {
+        var createdPost = _mapper.Map<Post>(dto);
+
+        await _postRepository.CreatePost(createdPost);
+    }
 }

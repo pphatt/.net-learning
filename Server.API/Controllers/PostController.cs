@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Server.Application.Common.Dtos.Posts;
 using Server.Application.Common.Interfaces.Services;
 using Swashbuckle.AspNetCore.Annotations;
 using System.ComponentModel;
@@ -42,5 +43,13 @@ public class PostController : ControllerBase
         }
 
         return Ok(post);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> CreatePost([FromBody] CreatePostDto dto)
+    {
+        await _postService.CreatePost(dto);
+
+        return StatusCode(201, "Created Successfully");
     }
 }

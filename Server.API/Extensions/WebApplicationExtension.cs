@@ -1,10 +1,20 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Server.Infrastructure;
 
 namespace Server.API.Extensions;
 
-public static class MigrationManager
+public static class WebApplicationExtension
 {
+    public static WebApplication AddAutoMapperValidation(this WebApplication app)
+    {
+        var scope = app.Services.CreateScope();
+        var mapper = scope.ServiceProvider.GetRequiredService<IMapper>();
+        mapper.ConfigurationProvider.AssertConfigurationIsValid();
+
+        return app;
+    }
+
     public static WebApplication MigrateDatabase(this WebApplication app)
     {
         var scope = app.Services.CreateScope();

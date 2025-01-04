@@ -7,4 +7,5 @@ public interface IPostService
 {
     Task<List<PostDto>> GetAllPostsAsync();
     Task<PostDto> GetById(Guid slug);
+    Task CreatePost(CreatePostDto dto);
 }
