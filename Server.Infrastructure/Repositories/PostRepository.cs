@@ -38,4 +38,11 @@ public class PostRepository : IPostRepository
 
         return entity.Id;
     }
+
+    public async Task<Boolean> DeletePost(Guid id)
+    {
+        var row = await _dbContext.Post.Where(p => p.Id == id).ExecuteDeleteAsync();
+
+        return row > 0 ? true : false;
+    }
 }

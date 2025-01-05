@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Server.Application.Features.PostApp.Commands.CreatePost;
+using Server.Application.Features.PostApp.Commands.DeletePost;
 using Server.Application.Features.PostApp.Queries.GetAllPost;
 using Server.Application.Features.PostApp.Queries.GetPostById;
 using Swashbuckle.AspNetCore.Annotations;
@@ -53,5 +54,18 @@ public class PostController : ControllerBase
         var id = await _mediator.Send(command);
 
         return CreatedAtAction(nameof(GetPostById), new { id }, "Created new post successfully");
+    }
+
+    [HttpDelete]
+    public async Task<IActionResult> DeletePost([FromBody] DeletePostCommand command)
+    {
+        var isDeleted = await _mediator.Send(command);
+
+        if (isDeleted)
+        {
+            return Ok("Delete post successfully");
+        }
+
+        return NotFound("Post id was not found");
     }
 }
