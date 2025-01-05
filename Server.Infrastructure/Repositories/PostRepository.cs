@@ -13,6 +13,11 @@ public class PostRepository : IPostRepository
         _dbContext = dbContext;
     }
 
+    public async Task CompleteAsync()
+    {
+        await _dbContext.SaveChangesAsync();
+    }
+
     public async Task<List<Post>> GetAllAsync()
     {
         var posts = await _dbContext.Post
@@ -51,10 +56,5 @@ public class PostRepository : IPostRepository
         await _dbContext.SaveChangesAsync();
 
         return true;
-    }
-
-    public async Task CompleteAsync()
-    {
-        await _dbContext.SaveChangesAsync();
     }
 }
