@@ -1,6 +1,54 @@
 [
   {
     "ContainingType": "Server.API.Controllers.PostController",
+    "Method": "CreatePost",
+    "RelativePath": "post",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Server.Application.Features.PostApp.Commands.CreatePost.CreatePostCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.API.Controllers.PostController",
+    "Method": "DeletePost",
+    "RelativePath": "post",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Server.Application.Features.PostApp.Commands.DeletePost.DeletePostCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.API.Controllers.PostController",
+    "Method": "UpdatePost",
+    "RelativePath": "post",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Server.Application.Features.PostApp.Commands.UpdatePost.UpdatePostCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.API.Controllers.PostController",
     "Method": "GetPostById",
     "RelativePath": "post/{id}",
     "HttpMethod": "GET",
@@ -23,38 +71,6 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Server.API.Controllers.PostController",
-    "Method": "CreatePost",
-    "RelativePath": "posts",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "Server.Application.Features.PostApp.Commands.CreatePost.CreatePostCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Server.API.Controllers.PostController",
-    "Method": "DeletePost",
-    "RelativePath": "posts",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "Server.Application.Features.PostApp.Commands.DeletePost.DeletePostCommand",
-        "IsRequired": true
-      }
-    ],
     "ReturnTypes": []
   }
 ]

@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Server.Application.Common.Dtos.Posts;
 using Server.Application.Common.Interfaces.Persistence;
 using Server.Domain.Entity.Content;
 
@@ -39,7 +38,7 @@ public class PostRepository : IPostRepository
         return entity.Id;
     }
 
-    public async Task<Boolean> DeletePost(Guid id)
+    public async Task<bool> DeletePost(Guid id)
     {
         var post = await GetByIdAsync(id);
 
@@ -52,5 +51,10 @@ public class PostRepository : IPostRepository
         await _dbContext.SaveChangesAsync();
 
         return true;
+    }
+
+    public async Task CompleteAsync()
+    {
+        await _dbContext.SaveChangesAsync();
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Server.Application.Features.PostApp.Commands.CreatePost;
 using Server.Application.Features.PostApp.Commands.DeletePost;
+using Server.Application.Features.PostApp.Commands.UpdatePost;
 using Server.Application.Features.PostApp.Queries.GetAllPost;
 using Server.Application.Features.PostApp.Queries.GetPostById;
 using Swashbuckle.AspNetCore.Annotations;
@@ -48,7 +49,7 @@ public class PostController : ControllerBase
         return Ok(post);
     }
 
-    [HttpPost]
+    [HttpPost("/post")]
     public async Task<IActionResult> CreatePost([FromBody] CreatePostCommand command)
     {
         var id = await _mediator.Send(command);
@@ -56,7 +57,7 @@ public class PostController : ControllerBase
         return CreatedAtAction(nameof(GetPostById), new { id }, "Created new post successfully");
     }
 
-    [HttpDelete]
+    [HttpDelete("/post")]
     public async Task<IActionResult> DeletePost([FromBody] DeletePostCommand command)
     {
         var isDeleted = await _mediator.Send(command);
@@ -64,6 +65,19 @@ public class PostController : ControllerBase
         if (isDeleted)
         {
             return Ok("Delete post successfully");
+        }
+
+        return NotFound("Post id was not found");
+    }
+
+    [HttpPatch("/post")]
+    public async Task<IActionResult> UpdatePost([FromBody] UpdatePostCommand command)
+    {
+        var isUpdated = await _mediator.Send(command);
+
+        if (isUpdated)
+        {
+            return Ok("Update Post successfully");
         }
 
         return NotFound("Post id was not found");
