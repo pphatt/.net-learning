@@ -41,8 +41,16 @@ public class PostRepository : IPostRepository
 
     public async Task<Boolean> DeletePost(Guid id)
     {
-        var row = await _dbContext.Post.Where(p => p.Id == id).ExecuteDeleteAsync();
+        var post = await GetByIdAsync(id);
 
-        return row > 0 ? true : false;
+        if (post is null)
+        {
+            return false;
+        }
+
+        _dbContext.Remove(post);
+        await _dbContext.SaveChangesAsync();
+
+        return true;
     }
 }
