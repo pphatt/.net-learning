@@ -31,9 +31,11 @@ public class PostRepository : IPostRepository
         return post;
     }
 
-    public async Task CreatePost(Post entity) 
+    public async Task<Guid> CreatePost(Post entity) 
     {
-        await _dbContext.Post.AddAsync(entity);
+        var post = await _dbContext.Post.AddAsync(entity);
         await _dbContext.SaveChangesAsync();
+
+        return entity.Id;
     }
 }

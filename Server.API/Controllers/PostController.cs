@@ -33,11 +33,11 @@ public class PostController : ControllerBase
         return Ok(posts);
     }
 
-    [HttpGet("/post/{Slug}")]
+    [HttpGet("/post/{id}")]
     [SwaggerOperation(Summary = "Get the details of a specific post", Description = "Take a post id in order to retrieve.")]
-    public async Task<IActionResult> GetPostById([FromRoute, SwaggerParameter(Description = "Post's Id", Required = true), DefaultValue("D7004D08-2DAB-487B-5DED-08DD2A71BF93")] Guid Slug)
+    public async Task<IActionResult> GetPostById([FromRoute, SwaggerParameter(Description = "Post's Id", Required = true), DefaultValue("D7004D08-2DAB-487B-5DED-08DD2A71BF93")] Guid id)
     {
-        var post = await _mediator.Send(new GetPostByIdQuery(Slug));
+        var post = await _mediator.Send(new GetPostByIdQuery(id));
 
         if(post is null)
         {
@@ -50,8 +50,8 @@ public class PostController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreatePost([FromBody] CreatePostCommand command)
     {
-        await _mediator.Send(command);
+        var id = await _mediator.Send(command);
 
-        return StatusCode(201, "Created Successfully");
+        return CreatedAtAction(nameof(GetPostById), new { id }, "Created new post successfully");
     }
 }

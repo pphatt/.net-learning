@@ -7,5 +7,5 @@ public interface IPostRepository
 {
     Task<List<Post>> GetAllAsync();
     Task<Post?> GetByIdAsync(Guid slug);
-    Task CreatePost(Post entity); 
+    Task<Guid> CreatePost(Post entity); 
 }

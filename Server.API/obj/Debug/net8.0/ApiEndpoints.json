@@ -2,13 +2,13 @@
   {
     "ContainingType": "Server.API.Controllers.PostController",
     "Method": "GetPostById",
-    "RelativePath": "post/{Slug}",
+    "RelativePath": "post/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Slug",
+        "Name": "id",
         "Type": "System.Guid",
         "IsRequired": true
       }
