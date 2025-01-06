@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using Server.Infrastructure;
 
 namespace Server.API.Extensions;
@@ -12,6 +13,9 @@ public static class WebApplicationExtension
         var scope = app.Services.CreateScope();
         var mapper = scope.ServiceProvider.GetRequiredService<IMapper>();
         mapper.ConfigurationProvider.AssertConfigurationIsValid();
+
+        // serilog config.
+        app.UseSerilogRequestLogging();
 
         return app;
     }

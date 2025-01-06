@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Server.Application.Common.Dtos.Posts;
 using Server.Application.Features.PostApp.Commands.CreatePost;
 using Server.Application.Features.PostApp.Commands.DeletePost;
 using Server.Application.Features.PostApp.Commands.UpdatePost;
@@ -23,7 +24,7 @@ public class PostController : ControllerBase
 
     [HttpGet]
     [SwaggerOperation(Summary = "Get all the posts", Description = "Get all the available post in the database.")]
-    public async Task<IActionResult> GetAll()
+    public async Task<ActionResult<List<PostDto>>> GetAll()
     {
         var posts = await _mediator.Send(new GetAllPostQuery());
 
@@ -37,7 +38,7 @@ public class PostController : ControllerBase
 
     [HttpGet("/post/{id}")]
     [SwaggerOperation(Summary = "Get the details of a specific post", Description = "Take a post id in order to retrieve.")]
-    public async Task<IActionResult> GetPostById([FromRoute, SwaggerParameter(Description = "Post's Id", Required = true), DefaultValue("D7004D08-2DAB-487B-5DED-08DD2A71BF93")] Guid id)
+    public async Task<ActionResult<PostDto>> GetPostById([FromRoute, SwaggerParameter(Description = "Post's Id", Required = true), DefaultValue("D7004D08-2DAB-487B-5DED-08DD2A71BF93")] Guid id)
     {
         var post = await _mediator.Send(new GetPostByIdQuery(id));
 
@@ -58,6 +59,8 @@ public class PostController : ControllerBase
     }
 
     [HttpDelete("/post")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> DeletePost([FromBody] DeletePostCommand command)
     {
         var isDeleted = await _mediator.Send(command);
@@ -71,6 +74,8 @@ public class PostController : ControllerBase
     }
 
     [HttpPatch("/post")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> UpdatePost([FromBody] UpdatePostCommand command)
     {
         var isUpdated = await _mediator.Send(command);
