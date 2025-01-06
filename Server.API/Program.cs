@@ -4,12 +4,22 @@ using Microsoft.OpenApi.Models;
 using Server.API.Extensions;
 using Server.Application.Extensions;
 using Server.Infrastructure.Extensions;
+using Serilog;
+using Serilog.Events;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 {
+    builder.Host.UseSerilog((context, configuration) =>
+        configuration
+            .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+            .MinimumLevel.Override("Microsoft.EntityFrameworkCore", LogEventLevel.Information)
+            .Enrich.FromLogContext()
+            .WriteTo.Console(outputTemplate: "[{Timestamp:dd-MM-yyyy HH:mm:ss} {Level:u3}] [{SourceContext}]{NewLine}{Message:lj}{NewLine}{Exception}")
+    );
+
     builder.Services
         .AddPresentation()
         .AddApplication()

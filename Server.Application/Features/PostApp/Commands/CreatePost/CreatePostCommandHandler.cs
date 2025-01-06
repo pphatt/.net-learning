@@ -21,11 +21,11 @@ public class CreatePostCommandHandler : IRequestHandler<CreatePostCommand, Guid>
 
     public async Task<Guid> Handle(CreatePostCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Create Post");
+        var mappedPost = _mapper.Map<Post>(request);
 
-        var createdPost = _mapper.Map<Post>(request);
+        _logger.LogInformation("Create Post: {@Post}", mappedPost);
 
-        var id = await _postRepository.CreatePost(createdPost);
+        var id = await _postRepository.CreatePost(mappedPost);
 
         return id;
     }

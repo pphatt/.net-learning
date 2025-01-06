@@ -20,8 +20,8 @@ public class UpdatePostCommandHandler : IRequestHandler<UpdatePostCommand, bool>
 
     public async Task<bool> Handle(UpdatePostCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Update post detail.");
         var post = await _postRepository.GetByIdAsync(request.Id);
+        _logger.LogInformation("Before updated post details: {@Post}", post);
 
         if (post is null)
         {
@@ -33,6 +33,8 @@ public class UpdatePostCommandHandler : IRequestHandler<UpdatePostCommand, bool>
         //post.Content = request.Content;
 
         await _postRepository.CompleteAsync();
+
+        _logger.LogInformation("After updated post details: {@Post}", post);
 
         return true;
     }

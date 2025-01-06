@@ -18,7 +18,7 @@ public class DeletePostCommandHandler : IRequestHandler<DeletePostCommand, Boole
 
     public Task<bool> Handle(DeletePostCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Delete post here");
+        _logger.LogInformation($"Delete PostId: {request.Id}");
         return _postRepository.DeletePost(request.Id);
     }
 }
