@@ -14,6 +14,7 @@ public static class DependencyInjection
 
         // can add seeder as a service here.
         services.AddScoped<IPostRepository, PostRepository>();
+        services.AddScoped<ICommentRepository, CommentRepository>();
 
         return services;
     }

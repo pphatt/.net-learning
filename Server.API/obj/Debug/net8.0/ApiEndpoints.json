@@ -1,5 +1,37 @@
 [
   {
+    "ContainingType": "Server.API.Controllers.CommentController",
+    "Method": "CommentOnPost",
+    "RelativePath": "comment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Server.Application.Features.CommentApp.Commands.CreateComment.CreateCommentCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.API.Controllers.CommentController",
+    "Method": "UpdateComment",
+    "RelativePath": "comment",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Server.Application.Features.CommentApp.Commands.UpdateComment.UpdateCommentCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Server.API.Controllers.PostController",
     "Method": "CreatePost",
     "RelativePath": "post",
