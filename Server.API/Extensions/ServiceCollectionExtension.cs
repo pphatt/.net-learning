@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Server.Infrastructure;
 using System.Reflection;
 using Server.API.Common.Mapper;
+using Server.API.Middlewares;
 
 namespace Server.API.Extensions;
 
@@ -12,6 +13,9 @@ public static class ServiceCollectionExtension
     {
         // default services.
         services.AddControllers();
+
+        // error handling middleware.
+        services.AddScoped<ErrorHandlingMiddleware>();
 
         // auto-mapper service.
         services.AddAutoMapper(Assembly.GetExecutingAssembly());

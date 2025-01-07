@@ -6,6 +6,7 @@ using Server.Application.Extensions;
 using Server.Infrastructure.Extensions;
 using Serilog;
 using Serilog.Events;
+using Server.API.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -41,6 +42,9 @@ if (app.Environment.IsDevelopment())
 
 // add auto mapper validation.
 app.AddAutoMapperValidation();
+
+// add error handling middleware.
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.MigrateDatabase();
 
