@@ -2,7 +2,7 @@
 
 namespace Server.Application.Features.PostApp.Commands.UpdatePost;
 
-public class UpdatePostCommand : IRequest<bool>
+public class UpdatePostCommand : IRequest
 {
     public Guid Id { get; set; }
 

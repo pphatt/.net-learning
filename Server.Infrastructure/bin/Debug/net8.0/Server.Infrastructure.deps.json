@@ -67,6 +67,14 @@
           }
         }
       },
+      "ErrorOr/2.0.1": {
+        "runtime": {
+          "lib/net6.0/ErrorOr.dll": {
+            "assemblyVersion": "2.0.1.0",
+            "fileVersion": "2.0.1.0"
+          }
+        }
+      },
       "FluentValidation/11.5.1": {
         "runtime": {
           "lib/net7.0/FluentValidation.dll": {
@@ -1048,6 +1056,9 @@
         }
       },
       "Server.Domain/1.0.0": {
+        "dependencies": {
+          "ErrorOr": "2.0.1"
+        },
         "runtime": {
           "Server.Domain.dll": {}
         }
@@ -1080,6 +1091,13 @@
       "sha512": "sha512-Sf4BoE6Q3jTgFkgBkx7qztYOFELBCo+wQgpYDwal/qJ1unBH73ywPztIJKXBXORRzAeNijsuxhk94h0TIMvfYg==",
       "path": "azure.identity/1.11.4",
       "hashPath": "azure.identity.1.11.4.nupkg.sha512"
+    },
+    "ErrorOr/2.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aje9lUVEAsusPFmaRcVM5EUqWBofd7hYtb9N8+ycgPYrtOzyFajMpzRgIO4uuiCllNLBc3x48+cpA+4v4koUDQ==",
+      "path": "erroror/2.0.1",
+      "hashPath": "erroror.2.0.1.nupkg.sha512"
     },
     "FluentValidation/11.5.1": {
       "type": "package",

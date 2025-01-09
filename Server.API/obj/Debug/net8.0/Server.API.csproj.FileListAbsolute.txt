@@ -113,3 +113,4 @@ C:\Dev\C#\ContentManagement\Server.API\bin\Debug\net8.0\System.IO.Pipelines.dll
 C:\Dev\C#\ContentManagement\Server.API\bin\Debug\net8.0\System.Text.Encodings.Web.dll
 C:\Dev\C#\ContentManagement\Server.API\bin\Debug\net8.0\System.Text.Json.dll
 C:\Dev\C#\ContentManagement\Server.API\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Dev\C#\ContentManagement\Server.API\bin\Debug\net8.0\ErrorOr.dll

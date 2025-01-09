@@ -1,4 +1,6 @@
 ﻿
+using Server.Domain.Exceptions;
+
 namespace Server.API.Middlewares;
 
 public class ErrorHandlingMiddleware : IMiddleware
@@ -15,7 +17,14 @@ public class ErrorHandlingMiddleware : IMiddleware
         try
         {
             await next.Invoke(context);
-        } catch (Exception ex)
+        } 
+        catch(NotFoundException notFound) {
+            context.Response.StatusCode = 404;
+            await context.Response.WriteAsync(notFound.Message);
+
+            _logger.LogWarning(notFound.Message);
+        }
+        catch (Exception ex)
         {
             _logger.LogError(ex, ex.Message);
 

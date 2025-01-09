@@ -63,14 +63,9 @@ public class PostController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> DeletePost([FromBody] DeletePostCommand command)
     {
-        var isDeleted = await _mediator.Send(command);
+        await _mediator.Send(command);
 
-        if (isDeleted)
-        {
-            return Ok("Delete post successfully");
-        }
-
-        return NotFound("Post id was not found");
+        return Ok("Delete post successfully");
     }
 
     [HttpPatch("/post")]
@@ -78,13 +73,8 @@ public class PostController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> UpdatePost([FromBody] UpdatePostCommand command)
     {
-        var isUpdated = await _mediator.Send(command);
+        await _mediator.Send(command);
 
-        if (isUpdated)
-        {
-            return Ok("Update Post successfully");
-        }
-
-        return NotFound("Post id was not found");
+        return Ok("Update Post successfully");
     }
 }

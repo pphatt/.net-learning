@@ -43,18 +43,9 @@ public class PostRepository : IPostRepository
         return entity.Id;
     }
 
-    public async Task<bool> DeletePost(Guid id)
+    public async Task DeletePost(Post entity)
     {
-        var post = await GetByIdAsync(id);
-
-        if (post is null)
-        {
-            return false;
-        }
-
-        _dbContext.Remove(post);
+        _dbContext.Remove(entity);
         await _dbContext.SaveChangesAsync();
-
-        return true;
     }
 }

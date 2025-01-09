@@ -3,6 +3,8 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using Server.Application.Common.Dtos.Posts;
 using Server.Application.Common.Interfaces.Persistence;
+using Server.Domain.Entity.Content;
+using Server.Domain.Exceptions;
 
 namespace Server.Application.Features.PostApp.Queries.GetPostById;
 
@@ -24,8 +26,10 @@ public class GetPostByIdQueryHandler : IRequestHandler<GetPostByIdQuery, PostDto
         _logger.LogInformation($"Get post here: {request.Id}");
         var post = await _postRepository.GetByIdAsync(request.Id);
 
+        if (post == null) throw new NotFoundException(nameof(Post), request.Id.ToString());
+
         var postsDto = _mapper.Map<PostDto>(post);
 
-        return postsDto!;
+        return postsDto;
     }
 }

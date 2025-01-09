@@ -29,9 +29,7 @@ public class CommentController : ControllerBase
     [HttpPatch]
     public async Task<IActionResult> UpdateComment([FromBody] UpdateCommentCommand command)
     {
-        var isUpdated = await _mediator.Send(command);
-
-        if (!isUpdated) return BadRequest("Cannot edit comment at the moment.");
+        await _mediator.Send(command);
 
         return Ok("Edit comment successfully");
     }

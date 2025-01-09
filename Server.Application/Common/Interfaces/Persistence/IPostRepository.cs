@@ -10,5 +10,5 @@ public interface IPostRepository
     Task<List<Post>> GetAllAsync();
     Task<Post?> GetByIdAsync(Guid slug);
     Task<Guid> CreatePost(Post entity); 
-    Task<bool> DeletePost(Guid id);
+    Task DeletePost(Post entity);
 }
