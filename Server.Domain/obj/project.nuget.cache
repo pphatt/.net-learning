@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "DOpS0w+E91wT+/DAzLnFLEE7tOsErZjDhA0mQERh/V0EUfaENJG1xrftPbRhm9JqIS6vWoW60yDdV0uy1DlMSA==",
+  "dgSpecHash": "5iouxdefIsZoXRK2M5gpLgsPWPk0Zn7VkksQRZtQTsNc9zCEEKd4UEFRu/D3BltjcWUgFpaUIdOEs/qgtu/PDA==",
   "success": true,
   "projectFilePath": "C:\\Dev\\C#\\ContentManagement\\Server.Domain\\Server.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\vutie\\.nuget\\packages\\erroror\\2.0.1\\erroror.2.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

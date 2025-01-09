@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "92poNl7r7njUiwz82Pcgque2UYhOeobHP85KCvERYHBXh6VIcNcrfL1PNxWb53S3o3Dwn9mJdyG/VbIjPoVydw==",
+  "dgSpecHash": "bwT0EYQi6DGdFk/PKppS5uz0Ft9C6DoWDDt62cTcZA79IDfNS21HylyMdYUlP84ScK1tevR1xjABj4STjte1qw==",
   "success": true,
   "projectFilePath": "C:\\Dev\\C#\\ContentManagement\\Server.Application\\Server.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vutie\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
+    "C:\\Users\\vutie\\.nuget\\packages\\erroror\\2.0.1\\erroror.2.0.1.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",

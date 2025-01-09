@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "eN74e1DC4b8Mfoeupn/eWK4cHOhviAR/7oWw1hE5S313zP3dNYhLxy0veuMs5iOCLtZfnmWN5AteIyvS4RjDLQ==",
+  "dgSpecHash": "GWVfwiX+kBHM8wgRof0eALfARs5T1fhN1RYqbIQMbdDrP4cJEUBZ5XSOLvvEXKbpxs1HSxrcWHcr6PmHQwQTEw==",
   "success": true,
   "projectFilePath": "C:\\Dev\\C#\\ContentManagement\\Server.Infrastructure\\Server.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vutie\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\vutie\\.nuget\\packages\\erroror\\2.0.1\\erroror.2.0.1.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "C:\\Users\\vutie\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
