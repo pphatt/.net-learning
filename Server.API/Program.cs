@@ -44,7 +44,7 @@ if (app.Environment.IsDevelopment())
 app.AddAutoMapperValidation();
 
 // add error handling middleware.
-app.UseMiddleware<ErrorHandlingMiddleware>();
+app.AddMiddleware();
 
 app.MigrateDatabase();
 

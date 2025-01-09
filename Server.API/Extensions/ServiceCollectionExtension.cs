@@ -17,6 +17,9 @@ public static class ServiceCollectionExtension
         // error handling middleware.
         services.AddScoped<ErrorHandlingMiddleware>();
 
+        // request time logging.
+        services.AddScoped<RquestTimeLoggingMiddleware>();
+
         // auto-mapper service.
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
