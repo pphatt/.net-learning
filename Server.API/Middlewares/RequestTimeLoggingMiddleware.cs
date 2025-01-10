@@ -21,7 +21,7 @@ public class RquestTimeLoggingMiddleware : IMiddleware
 
         if (stopWatch.ElapsedMilliseconds / 1000 > 4) 
         {
-            _logger.LogInformation($"Request {context.Request.Method} at {context.Request.Path} took {stopWatch.ElapsedMilliseconds} ms");
+            _logger.LogInformation($"Request [{context.Request.Method}] at {context.Request.Path} took {stopWatch.ElapsedMilliseconds} ms");
         }
     }
 }
