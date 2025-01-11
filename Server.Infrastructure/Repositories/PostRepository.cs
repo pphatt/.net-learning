@@ -1,12 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Server.Application.Common.Interfaces.Persistence;
 using Server.Domain.Entity.Content;
+using Server.Infrastructure.Persistence;
 
 namespace Server.Infrastructure.Repositories;
 
 public class PostRepository : IPostRepository
 {
-    AppDbContext _dbContext;
+    private readonly AppDbContext _dbContext;
 
     public PostRepository(AppDbContext dbContext)
     {

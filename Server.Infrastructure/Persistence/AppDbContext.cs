@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Server.Domain.Entity.Content;
 
-namespace Server.Infrastructure;
+namespace Server.Infrastructure.Persistence;
 
 public class AppDbContext : DbContext
 {

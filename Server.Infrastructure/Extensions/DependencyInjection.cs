@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Server.Application.Common.Interfaces.Persistence;
+using Server.Infrastructure.Persistence;
 using Server.Infrastructure.Repositories;
 
 namespace Server.Infrastructure.Extensions;

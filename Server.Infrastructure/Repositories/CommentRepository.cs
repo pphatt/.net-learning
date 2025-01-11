@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Server.Application.Common.Interfaces.Persistence;
-using Server.Application.Features.CommentApp.Commands.UpdateComment;
 using Server.Domain.Entity.Content;
+using Server.Infrastructure.Persistence;
 
 namespace Server.Infrastructure.Repositories;
 

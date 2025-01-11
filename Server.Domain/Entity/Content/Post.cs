@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Server.Domain.Entity.Content;
 
+[Table("Post")]
 public class Post : BaseEntity
 {
     [Required(ErrorMessage = "Post title is required")]

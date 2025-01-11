@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
-using Server.Infrastructure;
+using Server.Infrastructure.Persistence;
 
 namespace Server.API.Extensions;
 
