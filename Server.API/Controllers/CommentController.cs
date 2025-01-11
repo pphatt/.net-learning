@@ -1,7 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Server.Application.Common.Dtos.Comments;
 using Server.Application.Features.CommentApp.Commands.CreateComment;
 using Server.Application.Features.CommentApp.Commands.UpdateComment;
+using Server.Application.Features.CommentApp.Queries.GetAllPostComments;
 
 namespace Server.API.Controllers;
 
@@ -14,6 +16,15 @@ public class CommentController : ControllerBase
     public CommentController(IMediator mediator)
     {
         _mediator = mediator;
+    }
+
+    [HttpGet]
+    [Route("/post/{PostId}/comments")]
+    public async Task<ActionResult<List<PostCommentsDto>>> GetPostComments([FromRoute] GetAllPostCommentsQuery query)
+    {
+        var comments = await _mediator.Send(query);
+
+        return Ok(comments);
     }
 
     [HttpPost]

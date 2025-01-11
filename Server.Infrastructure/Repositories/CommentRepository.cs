@@ -19,6 +19,15 @@ public class CommentRepository : ICommentRepository
         await _dbContext.SaveChangesAsync();
     }
 
+    public async Task<List<PostComments>> GetAllPostComments(Guid PostId)
+    {
+        var comments = await _dbContext.PostComments
+            .Where(p => p.PostId == PostId)
+            .ToListAsync();
+
+        return comments;
+    }
+
     public async Task<PostComments?> GetByIdAsync(Guid Id)
     {
         var comment = await _dbContext.PostComments.FirstOrDefaultAsync(x => x.Id == Id);

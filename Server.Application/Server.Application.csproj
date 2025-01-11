@@ -17,4 +17,8 @@
     <ProjectReference Include="..\Server.Domain\Server.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\CommentApp\Queries\GetPostCommentsById\" />
+  </ItemGroup>
+
 </Project>

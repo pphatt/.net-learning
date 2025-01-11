@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using Server.Application.Common.Interfaces.Persistence;
 using Server.Domain.Entity.Content;
 using Server.Domain.Exceptions;
+using static Server.Domain.Common.Errors.Errors;
 
 namespace Server.Application.Features.CommentApp.Commands.UpdateComment;
 
@@ -25,11 +26,14 @@ public class UpdateCommentCommandHandler : IRequestHandler<UpdateCommentCommand>
     {
         var comment = await _commentRepository.GetByIdAsync(request.Id);
 
-        if (comment == null) throw new NotFoundException(nameof(Post), request.Id.ToString());
+        _logger.LogInformation("Before updated comment detail: {@Comment}", comment);
 
-        _logger.LogInformation("");
+        if (comment == null) throw new NotFoundException(nameof(PostComments), request.Id.ToString());
+
         _mapper.Map(request, comment);
 
         await _commentRepository.CompleteAsync();
+
+        _logger.LogInformation("After updated comment details: {@Comment}", comment);
     }
 }
