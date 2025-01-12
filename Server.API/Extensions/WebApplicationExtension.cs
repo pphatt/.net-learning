@@ -18,7 +18,7 @@ public static class WebApplicationExtension
         // serilog config.
         app.UseSerilogRequestLogging();
 
-        app.MapIdentityApi<AppUser>();
+        app.MapIdentityApi<AppUsers>();
 
         return app;
     }

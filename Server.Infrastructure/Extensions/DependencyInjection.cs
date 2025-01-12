@@ -27,7 +27,7 @@ public static class DependencyInjection
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
             .EnableSensitiveDataLogging());
 
-        services.AddIdentityApiEndpoints<AppUser>()
+        services.AddIdentityApiEndpoints<AppUsers>()
             .AddEntityFrameworkStores<AppDbContext>();
 
         return services;
