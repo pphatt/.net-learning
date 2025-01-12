@@ -12,7 +12,7 @@ using System.ComponentModel;
 namespace Server.API.Controllers;
 
 [ApiController]
-[Route("/posts")]
+[Route("/api/posts")]
 public class PostController : ControllerBase
 {
     IMediator _mediator;
@@ -39,7 +39,7 @@ public class PostController : ControllerBase
         return Ok(posts);
     }
 
-    [HttpGet("/post/{id}")]
+    [HttpGet("/api/post/{id}")]
     [SwaggerOperation(Summary = "Get the details of a specific post", Description = "Take a post id in order to retrieve.")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -56,7 +56,7 @@ public class PostController : ControllerBase
         return Ok(post);
     }
 
-    [HttpPost("/post")]
+    [HttpPost("/api/post")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -67,7 +67,7 @@ public class PostController : ControllerBase
         return CreatedAtAction(nameof(GetPostById), new { id }, "Created new post successfully");
     }
 
-    [HttpDelete("/post")]
+    [HttpDelete("/api/post")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -78,7 +78,7 @@ public class PostController : ControllerBase
         return Ok("Delete post successfully");
     }
 
-    [HttpPatch("/post")]
+    [HttpPatch("/api/post")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]

@@ -8,7 +8,7 @@ using Server.Application.Features.CommentApp.Queries.GetAllPostComments;
 namespace Server.API.Controllers;
 
 [ApiController]
-[Route("/comment")]
+[Route("/api/comment")]
 public class CommentController : ControllerBase
 {
     IMediator _mediator;
@@ -19,7 +19,7 @@ public class CommentController : ControllerBase
     }
 
     [HttpGet]
-    [Route("/post/{PostId}/comments")]
+    [Route("/api/post/{PostId}/comments")]
     public async Task<ActionResult<List<PostCommentsDto>>> GetPostComments([FromRoute] GetAllPostCommentsQuery query)
     {
         var comments = await _mediator.Send(query);

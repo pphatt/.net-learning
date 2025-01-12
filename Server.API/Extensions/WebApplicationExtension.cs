@@ -8,17 +8,20 @@ namespace Server.API.Extensions;
 
 public static class WebApplicationExtension
 {
+    public static WebApplication AddSerilog(this WebApplication app)
+    {
+        // serilog config.
+        app.UseSerilogRequestLogging();
+
+        return app;
+    }
+
     public static WebApplication AddAutoMapperValidation(this WebApplication app)
     {
         // add auto mapper validation.
         var scope = app.Services.CreateScope();
         var mapper = scope.ServiceProvider.GetRequiredService<IMapper>();
         mapper.ConfigurationProvider.AssertConfigurationIsValid();
-
-        // serilog config.
-        app.UseSerilogRequestLogging();
-
-        app.MapIdentityApi<AppUsers>();
 
         return app;
     }

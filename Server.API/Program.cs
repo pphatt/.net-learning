@@ -7,6 +7,8 @@ using Server.Infrastructure.Extensions;
 using Serilog;
 using Serilog.Events;
 using Server.API.Middlewares;
+using Microsoft.Extensions.DependencyInjection;
+using Server.Domain.Entity.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,12 +25,28 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 builder.Services.AddSwaggerGen(c =>
 {
     c.EnableAnnotations();
     c.SwaggerDoc("v1", new OpenApiInfo { Title = ".Net Learning API", Version = "v1" });
+
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer"
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" }
+            },
+            []
+        }
+    });
 });
 
 var app = builder.Build();
@@ -43,8 +61,14 @@ if (app.Environment.IsDevelopment())
 // add auto mapper validation.
 app.AddAutoMapperValidation();
 
+// add serilog.
+app.AddSerilog();
+
 // add error handling middleware.
 app.AddMiddleware();
+
+// add user identity.
+app.MapGroup("/api/identity").MapIdentityApi<AppUsers>();
 
 app.MigrateDatabase();
 
