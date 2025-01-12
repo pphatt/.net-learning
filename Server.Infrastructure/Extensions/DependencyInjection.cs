@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Server.Application.Common.Interfaces.Persistence;
+using Server.Domain.Entity.Identity;
 using Server.Infrastructure.Persistence;
 using Server.Infrastructure.Repositories;
 
@@ -25,6 +26,9 @@ public static class DependencyInjection
         services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
             .EnableSensitiveDataLogging());
+
+        services.AddIdentityApiEndpoints<AppUser>()
+            .AddEntityFrameworkStores<AppDbContext>();
 
         return services;
     }

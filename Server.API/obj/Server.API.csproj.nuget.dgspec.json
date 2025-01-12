@@ -229,6 +229,10 @@
             "ErrorOr": {
               "target": "Package",
               "version": "[2.0.1, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.11, )"
             }
           },
           "imports": [

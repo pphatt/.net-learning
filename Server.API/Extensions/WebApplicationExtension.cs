@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using Server.Domain.Entity.Identity;
 using Server.Infrastructure.Persistence;
 
 namespace Server.API.Extensions;
@@ -16,6 +17,8 @@ public static class WebApplicationExtension
 
         // serilog config.
         app.UseSerilogRequestLogging();
+
+        app.MapIdentityApi<AppUser>();
 
         return app;
     }

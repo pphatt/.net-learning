@@ -7,11 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entity\Identity\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="ErrorOr" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.11" />
   </ItemGroup>
 
 </Project>
