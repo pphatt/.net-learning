@@ -1,6 +1,4 @@
-﻿using Server.Domain.Entity.Content;
-
-namespace Server.Application.Common.Dtos.Reactions;
+﻿namespace Server.Application.Common.Dtos.Reactions;
 
 public class PostLikesDto
 {

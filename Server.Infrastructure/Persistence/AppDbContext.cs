@@ -13,7 +13,7 @@ public class AppDbContext : IdentityDbContext<AppUsers, IdentityRole<Guid>, Guid
 
     }
 
-    internal DbSet<Post> Post {  get; set; }
+    internal DbSet<Post> Post { get; set; }
 
     internal DbSet<PostComments> PostComments { get; set; }
 

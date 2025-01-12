@@ -1,5 +1,4 @@
-﻿using Server.Application.Features.CommentApp.Commands.UpdateComment;
-using Server.Domain.Entity.Content;
+﻿using Server.Domain.Entity.Content;
 
 namespace Server.Application.Common.Interfaces.Persistence;
 

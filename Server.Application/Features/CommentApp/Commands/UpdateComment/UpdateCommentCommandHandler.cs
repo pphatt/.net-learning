@@ -4,7 +4,6 @@ using Microsoft.Extensions.Logging;
 using Server.Application.Common.Interfaces.Persistence;
 using Server.Domain.Entity.Content;
 using Server.Domain.Exceptions;
-using static Server.Domain.Common.Errors.Errors;
 
 namespace Server.Application.Features.CommentApp.Commands.UpdateComment;
 

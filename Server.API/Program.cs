@@ -1,14 +1,9 @@
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using Server.API.Extensions;
 using Server.Application.Extensions;
-using Server.Infrastructure.Extensions;
-using Serilog;
-using Serilog.Events;
-using Server.API.Middlewares;
-using Microsoft.Extensions.DependencyInjection;
 using Server.Domain.Entity.Identity;
+using Server.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +20,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddAuthentication();
 
 builder.Services.AddSwaggerGen(c =>
 {

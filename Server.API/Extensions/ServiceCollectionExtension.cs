@@ -1,9 +1,6 @@
-﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
-using Server.Infrastructure;
-using System.Reflection;
-using Server.API.Common.Mapper;
+﻿using Microsoft.OpenApi.Models;
 using Server.API.Middlewares;
+using System.Reflection;
 
 namespace Server.API.Extensions;
 

@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Server.Application.Common.Dtos.Posts;
 using Server.Application.Features.PostApp.Commands.CreatePost;
@@ -13,6 +14,7 @@ namespace Server.API.Controllers;
 
 [ApiController]
 [Route("/api/posts")]
+[Authorize]
 public class PostController : ControllerBase
 {
     IMediator _mediator;
@@ -27,6 +29,7 @@ public class PostController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    [AllowAnonymous]
     public async Task<ActionResult<List<PostDto>>> GetAll()
     {
         var posts = await _mediator.Send(new GetAllPostQuery());
@@ -48,7 +51,7 @@ public class PostController : ControllerBase
     {
         var post = await _mediator.Send(new GetPostByIdQuery(id));
 
-        if(post is null)
+        if (post is null)
         {
             return NotFound();
         }

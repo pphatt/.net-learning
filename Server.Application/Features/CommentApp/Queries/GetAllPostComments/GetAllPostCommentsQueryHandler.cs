@@ -3,7 +3,6 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using Server.Application.Common.Dtos.Comments;
 using Server.Application.Common.Interfaces.Persistence;
-using Server.Domain.Entity.Content;
 
 namespace Server.Application.Features.CommentApp.Queries.GetAllPostComments;
 

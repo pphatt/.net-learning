@@ -1,6 +1,5 @@
 ﻿using Server.Application.Common.Dtos.Comments;
 using Server.Application.Common.Dtos.Reactions;
-using Server.Domain.Entity.Content;
 
 namespace Server.Application.Common.Dtos.Posts;
 

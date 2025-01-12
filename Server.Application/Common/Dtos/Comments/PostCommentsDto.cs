@@ -1,7 +1,4 @@
-﻿using Server.Application.Common.Dtos.Reactions;
-using Server.Domain.Entity.Content;
-
-namespace Server.Application.Common.Dtos.Comments;
+﻿namespace Server.Application.Common.Dtos.Comments;
 
 public class PostCommentsDto
 {

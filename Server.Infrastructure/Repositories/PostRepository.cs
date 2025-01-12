@@ -36,7 +36,7 @@ public class PostRepository : IPostRepository
         return post;
     }
 
-    public async Task<Guid> CreatePost(Post entity) 
+    public async Task<Guid> CreatePost(Post entity)
     {
         var post = await _dbContext.Post.AddAsync(entity);
         await _dbContext.SaveChangesAsync();
