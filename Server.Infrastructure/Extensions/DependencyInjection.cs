@@ -2,9 +2,11 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Server.Application.Common.Interfaces.Persistence;
+using Server.Application.Common.Interfaces.Services;
 using Server.Domain.Entity.Identity;
 using Server.Infrastructure.Persistence;
 using Server.Infrastructure.Repositories;
+using Server.Infrastructure.Services;
 
 namespace Server.Infrastructure.Extensions;
 
@@ -17,6 +19,9 @@ public static class DependencyInjection
         // can add seeder as a service here.
         services.AddScoped<IPostRepository, PostRepository>();
         services.AddScoped<ICommentRepository, CommentRepository>();
+        services.AddScoped<IUserService, UserService>();
+
+        services.AddHttpContextAccessor();
 
         return services;
     }
