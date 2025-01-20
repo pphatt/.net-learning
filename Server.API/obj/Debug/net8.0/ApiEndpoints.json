@@ -333,6 +333,22 @@
     ]
   },
   {
+    "ContainingType": "Server.API.Controllers.IdentityController",
+    "Method": "UpdateUserDetails",
+    "RelativePath": "api/identity/user",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Server.Application.Features.IdentityApp.Commands.UpdateIdentity.UpdateIdentityCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Server.API.Controllers.PostController",
     "Method": "CreatePost",
     "RelativePath": "api/post",
