@@ -65,7 +65,9 @@ app.AddSerilog();
 app.AddMiddleware();
 
 // add user identity.
-app.MapGroup("/api/identity").MapIdentityApi<AppUsers>();
+app.MapGroup("/api/identity")
+    .WithTags("Identity")
+    .MapIdentityApi<AppUsers>();
 
 app.MigrateDatabase();
 
