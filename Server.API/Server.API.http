@@ -1,15 +1,15 @@
 @port = 5089
 @Server.API_HostAddress = https://localhost:7008
 
-GET {{Server.API_HostAddress}}/posts
+GET {{Server.API_HostAddress}}/api/posts
 
 ###
 
-GET {{Server.API_HostAddress}}/post/D7004D08-2DAB-487B-5DED-08DD2A71BF93
+GET {{Server.API_HostAddress}}/api/post/504b9e0e-2b8a-44ea-5b7e-08dd2beaaf3a
 
 ###
 
-POST {{Server.API_HostAddress}}/posts
+POST {{Server.API_HostAddress}}/api/posts
 Content-Type: application/json
 
 {

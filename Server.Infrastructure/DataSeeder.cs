@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Server.Domain.Entity.Content;
+using Server.Domain.Entity.Identity;
 
 namespace Server.Infrastructure.Persistence;
 
@@ -37,6 +39,24 @@ public class DataSeeder
 
             await context.SaveChangesAsync();
         }
+
+        if (!await context.Roles.AnyAsync())
+        {
+            var roles = RoleList();
+            await context.Roles.AddRangeAsync(roles);
+            await context.SaveChangesAsync();
+        }
+    }
+
+    private static IEnumerable<IdentityRole<Guid>> RoleList()
+    {
+        var roles = new List<IdentityRole<Guid>>() 
+        {
+            new (AppRoles.Admin),
+            new (AppRoles.User)
+        };
+
+        return roles;
     }
 
     private static IEnumerable<Post> PostList()

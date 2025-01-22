@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Server.Application.Common.Interfaces.Persistence;
@@ -33,6 +34,7 @@ public static class DependencyInjection
             .EnableSensitiveDataLogging());
 
         services.AddIdentityApiEndpoints<AppUsers>()
+            .AddRoles<IdentityRole<Guid>>()
             .AddEntityFrameworkStores<AppDbContext>();
 
         return services;

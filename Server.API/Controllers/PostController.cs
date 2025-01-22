@@ -7,6 +7,7 @@ using Server.Application.Features.PostApp.Commands.DeletePost;
 using Server.Application.Features.PostApp.Commands.UpdatePost;
 using Server.Application.Features.PostApp.Queries.GetAllPost;
 using Server.Application.Features.PostApp.Queries.GetPostById;
+using Server.Domain.Entity.Identity;
 using Swashbuckle.AspNetCore.Annotations;
 using System.ComponentModel;
 
@@ -29,7 +30,6 @@ public class PostController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    [AllowAnonymous]
     public async Task<ActionResult<List<PostDto>>> GetAll()
     {
         var posts = await _mediator.Send(new GetAllPostQuery());
@@ -74,6 +74,7 @@ public class PostController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    [Authorize(Roles = AppRoles.Admin)]
     public async Task<IActionResult> DeletePost([FromBody] DeletePostCommand command)
     {
         await _mediator.Send(command);
