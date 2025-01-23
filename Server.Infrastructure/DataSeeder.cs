@@ -52,8 +52,14 @@ public class DataSeeder
     {
         var roles = new List<IdentityRole<Guid>>() 
         {
-            new (AppRoles.Admin),
+            new (AppRoles.Admin)
+            {
+                NormalizedName = AppRoles.Admin.ToUpper(),
+            },
             new (AppRoles.User)
+            {
+                NormalizedName = AppRoles.User.ToUpper(),
+            }
         };
 
         return roles;

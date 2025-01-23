@@ -555,5 +555,26 @@
         "StatusCode": 500
       }
     ]
+  },
+  {
+    "ContainingType": "Server.API.Controllers.IdentityController",
+    "Method": "AssignUserRole",
+    "RelativePath": "role",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "RoleId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

@@ -1,7 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Server.Application.Features.IdentityApp.Commands.AssignUserRole;
 using Server.Application.Features.IdentityApp.Commands.UpdateIdentity;
+using Server.Domain.Entity.Identity;
 
 namespace Server.API.Controllers;
 
@@ -19,6 +21,15 @@ public class IdentityController : ControllerBase
 
     [HttpPatch("user")]
     public async Task<IActionResult> UpdateUserDetails(UpdateIdentityCommand command)
+    {
+        await _mediator.Send(command);
+
+        return Ok();
+    }
+
+    [HttpPost("/role")]
+    [Authorize(Roles = AppRoles.Admin)]
+    public async Task<IActionResult> AssignUserRole([FromForm] AssignUserRoleCommand command)
     {
         await _mediator.Send(command);
 
