@@ -32,7 +32,7 @@ public class PostController : ControllerBase
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<List<PostDto>>> GetAll()
     {
-        var posts = await _mediator.Send(new GetAllPostQuery());
+        var posts = await _mediator.Send(new GetAllPostsQuery());
 
         if (!posts.Any())
         {
