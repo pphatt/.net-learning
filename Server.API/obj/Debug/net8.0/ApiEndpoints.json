@@ -576,5 +576,26 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.API.Controllers.IdentityController",
+    "Method": "UnassignUserRole",
+    "RelativePath": "role",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "RoleId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
