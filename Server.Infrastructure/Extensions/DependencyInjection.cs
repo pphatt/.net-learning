@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Server.Application.Common.Interfaces.Persistence;
 using Server.Application.Common.Interfaces.Services;
 using Server.Domain.Entity.Identity;
+using Server.Infrastructure.Authorization;
 using Server.Infrastructure.Persistence;
 using Server.Infrastructure.Repositories;
 using Server.Infrastructure.Services;
@@ -35,6 +36,7 @@ public static class DependencyInjection
 
         services.AddIdentityApiEndpoints<AppUsers>()
             .AddRoles<IdentityRole<Guid>>()
+            .AddClaimsPrincipalFactory<AppUsersClaimsPrincipalFactory>()
             .AddEntityFrameworkStores<AppDbContext>();
 
         return services;
