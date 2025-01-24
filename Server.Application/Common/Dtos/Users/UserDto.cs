@@ -8,11 +8,17 @@ public record UserDto
 
     public List<string> _Roles { get; set; }
 
-    public UserDto(string Id, string Email, List<string> Roles) 
+    public DateOnly? _Dob { get; set; }
+
+    public string? _Nationality { get; set; }
+
+    public UserDto(string Id, string Email, List<string> Roles, string? Nationality, DateOnly? Dob) 
     {
         _Id = Id;
         _Email = Email;
         _Roles = Roles;
+        _Dob = Dob;
+        _Nationality = Nationality;
     }
 
     public bool IsInRoles(string role) => _Roles.Contains(role);

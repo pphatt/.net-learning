@@ -49,6 +49,7 @@ public class PostController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    [Authorize(Policy = PolicyNames.AtLeast20)]
     public async Task<ActionResult<PostDto>> GetPostById([FromRoute, SwaggerParameter(Description = "Post's Id", Required = true), DefaultValue("D7004D08-2DAB-487B-5DED-08DD2A71BF93")] Guid id)
     {
         var post = await _mediator.Send(new GetPostByIdQuery(id));

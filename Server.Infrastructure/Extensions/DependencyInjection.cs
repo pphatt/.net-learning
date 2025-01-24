@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -6,6 +7,7 @@ using Server.Application.Common.Interfaces.Persistence;
 using Server.Application.Common.Interfaces.Services;
 using Server.Domain.Entity.Identity;
 using Server.Infrastructure.Authorization;
+using Server.Infrastructure.Authorization.Requirements;
 using Server.Infrastructure.Common.Constants;
 using Server.Infrastructure.Persistence;
 using Server.Infrastructure.Repositories;
@@ -41,7 +43,10 @@ public static class DependencyInjection
             .AddEntityFrameworkStores<AppDbContext>();
 
         services.AddAuthorizationBuilder()
-            .AddPolicy(PolicyNames.HasNationality, builder => builder.RequireClaim(AppClaimsTypes.Nationality));
+            .AddPolicy(PolicyNames.HasNationality, builder => builder.RequireClaim(AppClaimsTypes.Nationality))
+            .AddPolicy(PolicyNames.AtLeast20, builder => builder.AddRequirements(new MinimumAgeRequirement(20)));
+
+        services.AddScoped<IAuthorizationHandler, MinimumAgeRequirementHandler>();
 
         return services;
     }
