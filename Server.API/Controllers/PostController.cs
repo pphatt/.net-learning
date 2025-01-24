@@ -8,6 +8,7 @@ using Server.Application.Features.PostApp.Commands.UpdatePost;
 using Server.Application.Features.PostApp.Queries.GetAllPost;
 using Server.Application.Features.PostApp.Queries.GetPostById;
 using Server.Domain.Entity.Identity;
+using Server.Infrastructure.Common.Constants;
 using Swashbuckle.AspNetCore.Annotations;
 using System.ComponentModel;
 
@@ -30,6 +31,7 @@ public class PostController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    [Authorize(Roles = AppRoles.Admin, Policy = PolicyNames.HasNationality)]
     public async Task<ActionResult<List<PostDto>>> GetAll()
     {
         var posts = await _mediator.Send(new GetAllPostsQuery());

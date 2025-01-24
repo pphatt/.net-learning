@@ -6,6 +6,7 @@ using Server.Application.Common.Interfaces.Persistence;
 using Server.Application.Common.Interfaces.Services;
 using Server.Domain.Entity.Identity;
 using Server.Infrastructure.Authorization;
+using Server.Infrastructure.Common.Constants;
 using Server.Infrastructure.Persistence;
 using Server.Infrastructure.Repositories;
 using Server.Infrastructure.Services;
@@ -38,6 +39,9 @@ public static class DependencyInjection
             .AddRoles<IdentityRole<Guid>>()
             .AddClaimsPrincipalFactory<AppUsersClaimsPrincipalFactory>()
             .AddEntityFrameworkStores<AppDbContext>();
+
+        services.AddAuthorizationBuilder()
+            .AddPolicy(PolicyNames.HasNationality, builder => builder.RequireClaim(AppClaimsTypes.Nationality));
 
         return services;
     }
